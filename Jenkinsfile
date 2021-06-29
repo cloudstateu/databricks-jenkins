@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker 'ubuntu:latest' }
+    agent docker { image 'python:3.5.1' }
     stages {
         stage('Install prerequisites') {
             steps {
