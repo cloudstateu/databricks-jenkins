@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'fnndsc/ubuntu-python3' } }
+    agent any
     stages {
         stage('Install prerequisites') {
             steps {
