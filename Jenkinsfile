@@ -5,6 +5,7 @@ pipeline {
             steps {
                 sh '''
                    python -m pip install --upgrade pip
+                   pip install --upgrade pip
                    pip install pytest
                    pip install databricks-cli
                    cat > ~/.databrickscfg <<EOF
