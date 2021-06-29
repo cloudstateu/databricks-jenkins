@@ -1,12 +1,10 @@
 pipeline {
-    agent { docker { image 'ubuntu:latest' } }
+    agent { docker { image 'rc-buster' } }
     stages {
         stage('Install prerequisites') {
             steps {
                 sh '''
-                   sudo apt update
-                   sudo apt install python3.8
-                   sudo python -m pip install --upgrade pip
+                   python -m pip install --upgrade pip
                    pip install pytest
                    pip install databricks-cli
                    cat > ~/.databrickscfg <<EOF
