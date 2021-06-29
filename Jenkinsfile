@@ -4,7 +4,7 @@ pipeline {
         stage('Install prerequisites') {
             steps {
                 sh '''
-                   sudo apt install python3.8
+                   apt install python3.8
                    python -m pip install --upgrade pip
                    pip install pytest
                    pip install databricks-cli
