@@ -22,12 +22,12 @@ pipeline {
         }
         stage('Run Unit Tests') {
             steps {
-                sh "python -m pytest ${{ github.workspace }}/uTests/*"
+                sh "python -m pytest https://github.com/cloudstateu/databricks-jenkins/tree/main/uTests/*"
             }
         }
         stage('Import prod notebooks') {
             steps {
-                sh "databricks workspace import_dir -o ${{ github.workspace }}/notebooks /Prod"
+                sh "databricks workspace import_dir -o https://github.com/cloudstateu/databricks-jenkins/tree/main/notebooks /Prod"
             }
         }
     }
