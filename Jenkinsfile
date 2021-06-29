@@ -1,10 +1,10 @@
 pipeline {
-    agent { docker { image 'rc-buster' } }
+    agent { docker { image 'fnndsc/ubuntu-python3' } }
     stages {
         stage('Install prerequisites') {
             steps {
                 sh '''
-                   python3 -m pip install --upgrade pip
+                   python -m pip install --upgrade pip
                    pip install pytest
                    pip install databricks-cli
                    cat > ~/.databrickscfg <<EOF
