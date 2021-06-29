@@ -1,10 +1,10 @@
 pipeline {
-    agent any
+    agent { docker 'ubuntu:latest' }
     stages {
         stage('Install prerequisites') {
             steps {
                 sh '''
-                   python -m pip install pip
+                   python -m pip install --upgrade pip
                    pip install pytest
                    pip install databricks-cli
                    cat > ~/.databrickscfg <<EOF
