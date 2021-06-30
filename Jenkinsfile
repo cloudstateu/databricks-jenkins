@@ -7,6 +7,7 @@ pipeline {
                    pip install --upgrade pip
                    pip install pytest
                    pip install databricks-cli
+                   python --version
                    cat > ~/.databrickscfg <<EOF
                    [DEFAULT]
                    host = https://adb-3355368943779169.9.azuredatabricks.net
