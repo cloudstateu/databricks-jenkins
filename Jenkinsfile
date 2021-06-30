@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Import prod notebooks') {
             steps {
-                sh "databricks workspace import_dir -o https://github.com/cloudstateu/databricks-jenkins/tree/main/notebooks /Prod"
+                sh "databricks workspace import_dir -o ${{ github.workspace }}/notebooks /Prod"
             }
         }
         stage('Run Unit Tests') {
