@@ -26,7 +26,7 @@ pipeline {
         stage('Run Unit Tests') {
             steps {
                 sh "python --version"
-                sh "python -m pytest https://github.com/cloudstateu/databricks-jenkins/tree/main/uTests/*"
+                sh "sudo -H python -m pytest https://github.com/cloudstateu/databricks-jenkins/tree/main/uTests/*"
             }
         }
         stage('Import prod notebooks') {
