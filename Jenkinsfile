@@ -4,7 +4,7 @@ pipeline {
         stage('Install prerequisites') {
             steps {
                 sh '''
-                   pip install --upgrade pip
+                   python -m pip install --upgrade pip
                    pip install pytest
                    pip install databricks-cli
                    cat > ~/.databrickscfg <<EOF
@@ -24,8 +24,6 @@ pipeline {
         }
         stage('Run Unit Tests') {
             steps {
-                sh "pip install --upgrade pip"
-                sh "pip install pytest"
                 sh "python -m pytest https://github.com/cloudstateu/databricks-jenkins/tree/main/uTests/*"
             }
         }
