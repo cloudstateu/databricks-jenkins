@@ -1,5 +1,3 @@
-pipeline {
-    agent any
     node {
         stage('Install prerequisites') {
             steps {
@@ -33,4 +31,3 @@ pipeline {
             }
         }
     }
-}
