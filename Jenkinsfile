@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    stages {
+    node {
         stage('Install prerequisites') {
             steps {
                 sh '''
