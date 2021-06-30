@@ -24,6 +24,7 @@ pipeline {
         }
         stage('Run Unit Tests') {
             steps {
+                sh "pip install pytest"
                 sh "python -m pytest https://github.com/cloudstateu/databricks-jenkins/tree/main/uTests/*"
             }
         }
