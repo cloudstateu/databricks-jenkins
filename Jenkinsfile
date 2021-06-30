@@ -10,14 +10,14 @@ pipeline {
                    cat > ~/.databrickscfg <<EOF
                    [DEFAULT]
                    host = https://adb-3355368943779169.9.azuredatabricks.net
-                   token = $(echo "${{ secrets.DATABRICKS_TOKEN }}")
+                   token = "danpi6362231bc552a069325527f3ecedcca3d"
                    EOF
                '''
             }
         }
         stage('Github checkout') {
             steps {
-                git url: "https://github.com/cloudstateu/databricks-jenkins"
+                git url: "https://github.com/cloudstateu/databricks-jenkins.git"
             }
         }
         stage('Run Unit Tests') {
