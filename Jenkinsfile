@@ -4,9 +4,9 @@ pipeline {
         stage('Install prerequisites') {
             steps {
                 sh '''
-                   python3 -m pip3 install --upgrade pip3
-                   pip3 install pytest
-                   pip3 install databricks-cli
+                   python3 -m pip install --upgrade pip
+                   pip install pytest
+                   pip install databricks-cli
                    cat > ~/.databrickscfg <<EOF
                    [DEFAULT]
                    host = https://adb-3355368943779169.9.azuredatabricks.net
