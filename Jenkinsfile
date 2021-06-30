@@ -25,8 +25,6 @@ pipeline {
         }
         stage('Run Unit Tests') {
             steps {
-                sh "sudo apt-get -y update && sudo apt-get -y upgrade"
-                sh "sudo apt-get -y install python3.7"
                 sh "python --version"
                 sh "python -m pytest https://github.com/cloudstateu/databricks-jenkins/tree/main/uTests/*"
             }
