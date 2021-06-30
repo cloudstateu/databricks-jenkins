@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker 'ubuntu:latest' }
+    agent any
     stages {
         stage('Install prerequisites') {
             steps {
