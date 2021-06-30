@@ -4,11 +4,8 @@ pipeline {
         stage('Install prerequisites') {
             steps {
                 sh '''
-                   apt update
-                   apt install software-properties-common
-                   add-apt-repository ppa:deadsnakes/ppa
-                   apt update
-                   apt install python3.8
+                   sudo apt update
+                   sudo apt -y upgrade
                    python ––version
                    python -m pip install --upgrade pip
                    pip install --upgrade pytest
