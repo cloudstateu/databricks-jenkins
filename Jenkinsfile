@@ -4,7 +4,13 @@ pipeline {
         stage('Install prerequisites') {
             steps {
                 sh '''
-                   python -m pip install --upgrade pip
+                   sudo apt update
+                   sudo apt install software-properties-common
+                   sudo add-apt-repository ppa:deadsnakes/ppa
+                   sudo apt update
+                   sudo apt install python3.8
+                   python ––version
+                   python3 -m pip install --upgrade pip
                    pip install --upgrade pytest
                    pip install databricks-cli
                    python -m pytest
