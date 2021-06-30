@@ -24,8 +24,9 @@ pipeline {
         }
         stage('Run Unit Tests') {
             steps {
+                sh "pip install --upgrade pip"
                 sh "pip install pytest"
-                sh "python -m pytest https://github.com/cloudstateu/databricks-jenkins/tree/main/uTests/test_1.py"
+                sh "python -m pytest https://github.com/cloudstateu/databricks-jenkins/tree/main/uTests/*"
             }
         }
         stage('Import prod notebooks') {
