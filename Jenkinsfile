@@ -1,12 +1,12 @@
 pipeline {
-    agent { docker 'ubuntu:latest' }
+    agent any
     stages {
         stage('Install prerequisites') {
             steps {
                 sh '''
-                   python -m pip install --upgrade pip
-                   pip install pytest
-                   pip install databricks-cli
+                   pip3 install --upgrade pip3
+                   pip3 install pytest
+                   pip3 install databricks-cli
                    cat > ~/.databrickscfg <<EOF
                    [DEFAULT]
                    host = https://adb-3355368943779169.9.azuredatabricks.net
@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Run Unit Tests') {
             steps {
-                sh "python -m pytest https://github.com/cloudstateu/databricks-jenkins/tree/main/uTests/*"
+                sh "python3 -m pytest https://github.com/cloudstateu/databricks-jenkins/tree/main/uTests/*"
             }
         }
         stage('Import prod notebooks') {
