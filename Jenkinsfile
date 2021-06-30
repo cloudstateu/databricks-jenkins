@@ -15,9 +15,10 @@ pipeline {
                '''
             }
         }
-        stage('Github checkout') {
+        stage("Checkout") {
             steps {
-                git url: "https://github.com/cloudstateu/databricks-jenkins.git"
+              checkout scm
+              git url: 'https://github.com/cloudstateu/databricks-jenkins.git'
             }
         }
         stage('Run Unit Tests') {
