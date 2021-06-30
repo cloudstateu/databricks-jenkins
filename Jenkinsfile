@@ -5,9 +5,8 @@ pipeline {
             steps {
                 sh '''
                    pip install --upgrade pip
-                   pip install --upgrade pytest
+                   pip install pytest
                    pip install databricks-cli
-                   python -m pytest
                    cat > ~/.databrickscfg <<EOF
                    [DEFAULT]
                    host = https://adb-3355368943779169.9.azuredatabricks.net
@@ -25,6 +24,7 @@ pipeline {
         }
         stage('Run Unit Tests') {
             steps {
+                sh "pip install pytest"
                 sh "python -m pytest https://github.com/cloudstateu/databricks-jenkins/tree/main/uTests/*"
             }
         }
