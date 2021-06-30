@@ -18,7 +18,7 @@ pipeline {
         stage("Checkout") {
             steps {
               checkout scm
-              git branch: "master",
+              git branch: "main",
                   url: 'https://github.com/cloudstateu/databricks-jenkins.git'
             }
         }
