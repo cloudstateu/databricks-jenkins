@@ -4,9 +4,9 @@ pipeline {
         stage('Install prerequisites') {
             steps {
                 sh '''
-                   sudo pip install --upgrade pip
-                   sudo pip install --upgrade pytest
-                   sudo pip install databricks-cli
+                   python -m pip install --upgrade pip
+                   pip install --upgrade pytest
+                   pip install databricks-cli
                    python -m pytest
                    cat > ~/.databrickscfg <<EOF
                    [DEFAULT]
