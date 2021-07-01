@@ -36,7 +36,6 @@ EOF
             steps {
                 sh "python3 --version"
                 sh "python3.7 -m pytest /var/lib/jenkins/workspace/cloudstate-databricksTestPipeline/uTests/*"
-                sh "source venv/bin/deactivate"
             }
         }
     }
