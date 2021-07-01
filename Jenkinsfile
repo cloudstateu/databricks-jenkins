@@ -4,6 +4,8 @@ pipeline {
         stage('Install prerequisites') {
             steps {
                 sh '''
+                    python3 -m venv venv
+                    source venv/bin/activate
                     pip install --upgrade pip
                     pip install pytest
                     pip install databricks-cli
@@ -34,6 +36,7 @@ EOF
             steps {
                 sh "python3 --version"
                 sh "python3 -m pytest /var/lib/jenkins/workspace/cloudstate-databricksTestPipeline/uTests/*"
+                sh "deactivate"
             }
         }
     }
