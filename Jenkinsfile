@@ -17,9 +17,6 @@ EOF
         }
         stage("Checkout") {
             steps {
-              sh "ls"
-              sh "pwd"
-              checkout scm
               git branch: "main",
                   url: 'https://github.com/cloudstateu/databricks-jenkins'
             }
@@ -31,7 +28,6 @@ EOF
         }
         stage('Run Unit Tests') {
             steps {
-                sh "python3 --version"
                 sh "python3.7 -m pytest /var/lib/jenkins/workspace/cloudstate-databricksTestPipeline/uTests/*"
             }
         }
