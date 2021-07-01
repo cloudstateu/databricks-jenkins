@@ -8,6 +8,7 @@ pipeline {
                    sudo -H pip install pytest
                    sudo -H pip install databricks-cli
                    python --version
+                   databricks configure --token
                    cat > ~/.databrickscfg << EOF
                    [DEFAULT]
                    host = https://adb-3355368943779169.9.azuredatabricks.net
