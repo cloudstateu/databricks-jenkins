@@ -10,7 +10,7 @@ pipeline {
                     cat > ~/.databrickscfg <<EOF
                     [DEFAULT]
                     host = https://adb-3355368943779169.9.azuredatabricks.net
-                    token = "danpi6362231bc552a06932527f3ecedcca3d"
+                    token = "dapi64bb8c81c6335d14404f5c4b23e7e78c"
 EOF
                 '''
             }
