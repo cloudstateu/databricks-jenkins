@@ -33,7 +33,7 @@ EOF
         stage('Run Unit Tests') {
             steps {
                 sh "python --version"
-                sh "python -m pytest https://github.com/cloudstateu/databricks-jenkins/tree/main/uTests/*"
+                sh "python -m pytest /var/lib/jenkins/workspace/cloudstate-databricksTestPipeline/uTests/*"
             }
         }
     }
