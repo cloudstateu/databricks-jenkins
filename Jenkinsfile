@@ -26,7 +26,6 @@ EOF
         }
         stage('Import prod notebooks') {
             steps {
-                sh "databricks workspace mkdirs /Users/daniel.pisarek@chmurowisko.pl/MyNewFolder"
                 sh "databricks workspace import_dir -o /var/lib/jenkins/workspace/cloudstate-databricksTestPipeline/notebooks/* /Prod"
             }
         }
