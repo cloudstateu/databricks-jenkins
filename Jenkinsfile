@@ -19,6 +19,7 @@ pipeline {
         stage("Checkout") {
             steps {
               sh "ls"
+              sh "pwd"
               checkout scm
               git branch: "main",
                   url: 'https://github.com/cloudstateu/databricks-jenkins'
