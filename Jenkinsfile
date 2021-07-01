@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Import prod notebooks') {
             steps {
-                sh "databricks clusters list --output JSON | jq '[ .clusters[] | { name: .cluster_name, id: .cluster_id } ]'"
+                sh "databricks clusters list --output JSON"
                 sh "databricks workspace import_dir -o /var/lib/jenkins/workspace/cloudstate-databricksTestPipeline/notebooks/* /Prod"
             }
         }
