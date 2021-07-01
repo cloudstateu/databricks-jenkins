@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Import prod notebooks') {
             steps {
-                sh "databricks workspace import_dir -o /var/lib/jenkins/workspace/cloudstate-databricksTestPipeline/notebooks /Prod"
+                sh "databricks workspace import_dir -o var/lib/jenkins/workspace/cloudstate-databricksTestPipeline/notebooks /Prod"
             }
         }
         stage('Run Unit Tests') {
