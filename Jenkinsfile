@@ -20,7 +20,7 @@ pipeline {
             steps {
               checkout scm
               git branch: "main",
-                  url: 'https://github.com/cloudstateu/databricks-jenkins.git'
+                  url: 'https://github.com/cloudstateu/databricks-jenkins'
             }
         }
         stage('Import prod notebooks') {
