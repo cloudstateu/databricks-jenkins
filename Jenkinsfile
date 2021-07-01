@@ -35,7 +35,7 @@ EOF
         stage('Run Unit Tests') {
             steps {
                 sh "python3 --version"
-                sh "python3 -m pytest /var/lib/jenkins/workspace/cloudstate-databricksTestPipeline/uTests/*"
+                sh "python3.7 -m pytest /var/lib/jenkins/workspace/cloudstate-databricksTestPipeline/uTests/*"
                 sh "deactivate"
             }
         }
