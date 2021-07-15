@@ -10,7 +10,7 @@ pipeline {
                     cat > ~/.databrickscfg <<EOF
                     [DEFAULT]
                     host = ${HostUrl}
-                    token = dapi64bb8c81c6335d14404f5c4b23e7e78c
+                    token = ${DataBricksToken}
 EOF
                 '''
             }
