@@ -17,18 +17,18 @@ EOF
         }
         stage("Checkout") {
             steps {
-              git branch: "main",
-                  url: "${GithubUrl}"
-            }
-        }
-        stage('Import prod notebooks') {
-            steps {
-                sh "databricks workspace import_dir -o /var/lib/jenkins/workspace/${env.JOB_NAME}/notebooks/* /Prod"
+                checkout scm
+                git branch: "${GithubBranch}"
             }
         }
         stage('Run Unit Tests') {
             steps {
                 sh "python3.7 -m pytest /var/lib/jenkins/workspace/${env.JOB_NAME}/uTests/*"
+            }
+        }
+        stage('Import prod notebooks') {
+            steps {
+                sh "databricks workspace import_dir -o /var/lib/jenkins/workspace/${env.JOB_NAME}/notebooks/* /Prod"
             }
         }
     }
