@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Install prerequisites') {
             steps {
+                sh "echo ${HostUrl}"
                 sh '''
                     pip install --upgrade pip
                     pip install pytest
