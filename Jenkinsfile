@@ -18,7 +18,7 @@ EOF
         stage("Checkout") {
             steps {
               git branch: "main",
-                  url: 'https://github.com/cloudstateu/databricks-jenkins'
+                  url: ${GithubUrl}
             }
         }
         stage('Import prod notebooks') {
