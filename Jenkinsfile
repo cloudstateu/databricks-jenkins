@@ -18,7 +18,7 @@ EOF
         stage("Checkout") {
             steps {
               git branch: "main",
-                  url: ${GithubUrl}
+                  url: "${GithubUrl}"
             }
         }
         stage('Import prod notebooks') {
