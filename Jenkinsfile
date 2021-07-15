@@ -9,7 +9,7 @@ pipeline {
                     pip install databricks-cli
                     cat > ~/.databrickscfg <<EOF
                     [DEFAULT]
-                    host = https://adb-3355368943779169.9.azuredatabricks.net
+                    host = ${HostUrl}
                     token = dapi64bb8c81c6335d14404f5c4b23e7e78c
 EOF
                 '''
