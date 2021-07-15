@@ -1,4 +1,3 @@
-#!groovy
 pipeline {
     agent any
     stages {
@@ -14,12 +13,6 @@ pipeline {
                     token = ${DataBricksToken}
 EOF
                 '''
-            }
-        }
-        stage("Checkout") {
-            steps {
-                checkout scm
-                git branch: "${GithubBranch}"
             }
         }
         stage('Run Unit Tests') {
