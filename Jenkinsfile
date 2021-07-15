@@ -18,9 +18,8 @@ EOF
         }
         stage("Checkout") {
             steps {
-                checkout([
-                    branches: "${GithubBranch}"
-                ])
+                checkout scm
+                git branch: "${GithubBranch}"
             }
         }
         stage('Run Unit Tests') {
