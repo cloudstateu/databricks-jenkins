@@ -17,7 +17,9 @@ EOF
         }
         stage("Checkout") {
             steps {
-                checkout scm
+                checkout scm([
+                    branches: "${GithubBranch}"
+                ])
                 git branch: "main"
             }
         }
