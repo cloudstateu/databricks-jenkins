@@ -20,7 +20,6 @@ EOF
                 checkout scm([
                     branches: "${GithubBranch}"
                 ])
-                git branch: "main"
             }
         }
         stage('Run Unit Tests') {
