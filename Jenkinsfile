@@ -1,9 +1,10 @@
 pipeline {
     agent any
     stages {
-        stage('checkout'){
+        stage('Checkout'){
             steps{
                 checkout scm
+                git branch: ${git_branch}
             }
         }
         stage('Install prerequisites') {
