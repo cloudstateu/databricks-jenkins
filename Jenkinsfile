@@ -4,7 +4,6 @@ pipeline {
         stage('checkout'){
             steps{
                 checkout scm
-                git branch: "${git_branch}"
             }
         }
         stage('Install prerequisites') {
