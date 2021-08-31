@@ -1,0 +1,46 @@
+{
+    "settings": {
+        "new_cluster": {
+            "spark_version": "8.3.x-scala2.12",
+            "spark_conf": {
+                "spark.executor.extraJavaOptions": "-Djava.security.properties=",
+                "spark.driver.extraJavaOptions": "-Djava.security.properties="
+            },
+            "azure_attributes": {
+                "availability": "ON_DEMAND_AZURE",
+                "first_on_demand": 1,
+                "spot_bid_max_price": -1
+            },
+            "node_type_id": "Standard_DS3_v2",
+            "spark_env_vars": {
+                "PYSPARK_PYTHON": "/databricks/python3/bin/python3"
+            },
+            "enable_elastic_disk": true,
+            "num_workers": 1
+        },
+        "libraries": [
+            {
+                "pypi": {
+                    "package": "azure-eventhub==5.6.0"
+                }
+            },
+            {
+                "maven": {
+                    "coordinates": "org.apache.httpcomponents:fluent-hc:4.5.13"
+                }
+            },
+            {
+                "jar": "dbfs:/FileStore/jars/0268fc24_c1fe_4767_b317_70187342e0f0-azure_data_analitics_0_0_11-9b3ab.jar"
+            },
+            {
+                "whl": "dbfs:/FileStore/jars/4b61461f_209e_4f71_8b5d_cf0597d54de6/maintenance_solution_analytics-0.1.16-py3-none-any.whl"
+            }
+        ],
+        "notebook_task": {
+            "notebook_path": "/notebooks/holos_analytics_pipeline"
+        },
+        "email_notifications": {},
+        "name": "piotr-test-job",
+        "max_concurrent_runs": 1
+    }
+}

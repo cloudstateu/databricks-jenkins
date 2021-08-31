@@ -25,5 +25,10 @@ EOF
                 sh "databricks workspace import -o -l PYTHON /var/lib/jenkins/workspace/${env.JOB_NAME}/notebooks/holos_analytics_pipeline.py /notebooks/piotr-test.py"
             }
         }
+        stage('Update databricks job') {
+            steps {
+                sh "databricks jobs reset --job-id 71 --json-file /var/lib/jenkins/workspace/${env.JOB_NAME}/jobs/holos-job.json"
+            }
+        }
     }
 }
