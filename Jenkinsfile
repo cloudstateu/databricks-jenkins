@@ -22,7 +22,7 @@ EOF
         }
         stage('Import notebook') {
             steps {
-                sh "databricks workspace import -o -l PYTHON /var/lib/jenkins/workspace/${env.JOB_NAME}/notebooks/holos_analytics_pipeline.py /notebooks"
+                sh "databricks workspace import -o -l PYTHON /var/lib/jenkins/workspace/${env.JOB_NAME}/notebooks/holos_analytics_pipeline.py /notebooks/piotr-test.py"
             }
         }
     }
