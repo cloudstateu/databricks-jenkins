@@ -14,20 +14,15 @@ pipeline {
                     pip install databricks-cli
                     cat > ~/.databrickscfg <<EOF
                     [DEFAULT]
-                    host = ${HostUrl}
-                    token = ${DataBricksToken}
+                    host = ${WorkspaceUrl}
+                    token = ${DatabricksToken}
 EOF
                 '''
             }
         }
-        stage('Run Unit Tests') {
+        stage('Import notebook') {
             steps {
-                sh "python3.7 -m pytest /var/lib/jenkins/workspace/${env.JOB_NAME}/uTests/*"
-            }
-        }
-        stage('Import prod notebooks') {
-            steps {
-                sh "databricks workspace import_dir -o /var/lib/jenkins/workspace/${env.JOB_NAME}/notebooks/* /Prod"
+                sh "databricks workspace import -o -l PYTHON /var/lib/jenkins/workspace/${env.JOB_NAME}/notebooks/holos_analytics_pipeline.py /notebooks"
             }
         }
     }
