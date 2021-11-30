@@ -8,10 +8,8 @@ pipeline {
         }
         stage('Update databricks job') {
             steps {
-                sh '''
                 echo "Jenkins job piotr!"
-                ls
-                '''
+                echo "Model name is: ${params.modelname}, model version is: ${params.modelversion}"
             }
         }
     }
